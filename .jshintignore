@@ -1,0 +1,4 @@
+templates/example/public
+templates/example/node_modules
+module_presets/other
+node_modules
