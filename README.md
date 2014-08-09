@@ -1,4 +1,4 @@
-#Catberry CLI
+#Catberry CLI [![Build Status](https://travis-ci.org/catberry/catberry-cli.png?branch=master)](https://travis-ci.org/catberry/catberry-cli)
 
 [![NPM](https://nodei.co/npm/catberry-cli.png)](https://nodei.co/npm/catberry-cli/)
 
