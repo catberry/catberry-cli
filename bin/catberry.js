@@ -148,7 +148,7 @@ function copyTemplateTo(template, destination) {
 		console.log('\nProject template "' + template +
 			'" has been deployed to "' + destination + '"');
 		console.log('\nNow install dependencies:\n\n\tnpm install\n');
-		var debugScript = 'npm run debug' + isWindows() ? '-win' : '';
+		var debugScript = 'npm run debug' + (isWindows() ? '-win' : '');
 		console.log('Then to start in debug mode without code ' +
 			'minification and with file watch:\n\n\t' + debugScript + '\n');
 		console.log('To start in release mode with code ' +
