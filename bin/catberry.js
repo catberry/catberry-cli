@@ -37,6 +37,7 @@ var fs = require('fs'),
 	readline = require('readline'),
 	program = require('commander'),
 	path = require('path'),
+	os = require('os'),
 	templatesRoot = path.join(__dirname, '..', 'templates'),
 	modulePresetsRoot = path.join(__dirname, '..', 'module_presets'),
 	ncp = require('ncp'),
@@ -147,8 +148,9 @@ function copyTemplateTo(template, destination) {
 		console.log('\nProject template "' + template +
 			'" has been deployed to "' + destination + '"');
 		console.log('\nNow install dependencies:\n\n\tnpm install\n');
+		var debugScript = 'npm run debug' + isWindows() ? '-win' : '';
 		console.log('Then to start in debug mode without code ' +
-			'minification and with file watch:\n\n\tnpm run debug\n');
+			'minification and with file watch:\n\n\t' + debugScript + '\n');
 		console.log('To start in release mode with code ' +
 			'minification and without file watch:\n\n\tnpm start\n');
 	});
@@ -262,4 +264,11 @@ function toPascalCase(name) {
 	});
 
 	return pascalCaseName;
+}
+
+/**
+ * Determines is current platform windows.
+ */
+function isWindows() {
+	return (/^win/i).test(os.platform());
 }
