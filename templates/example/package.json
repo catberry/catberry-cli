@@ -6,7 +6,7 @@
 	"author": "Catberry",
 	"license": "MIT",
 	"dependencies": {
-		"catberry": "^1.0.0",
+		"catberry": "^1.4.0",
 		"catberry-module": "^1.0.0",
 		"connect": "^3.0.0",
 		"compression": "^1.0.0",

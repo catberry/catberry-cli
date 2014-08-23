@@ -11,15 +11,13 @@ util.inherits(CommitsModule, ModuleBase);
  * Creates new instance of Commits module.
  * @param {UHR} $uhr Universal HTTP(S) request.
  * @param {jQuery} $jQuery jQuery library.
- * @param {TemplateProvider} $templateProvider jQuery library.
  * @constructor
  * @extends ModuleBase
  */
-function CommitsModule($uhr, $jQuery, $templateProvider) {
+function CommitsModule($uhr, $jQuery) {
 	ModuleBase.call(this);
 	this._uhr = $uhr;
 	this.$ = $jQuery;
-	this._templateProvider = $templateProvider;
 }
 
 /**
@@ -28,13 +26,6 @@ function CommitsModule($uhr, $jQuery, $templateProvider) {
  * @private
  */
 CommitsModule.prototype._uhr = null;
-
-/**
- * Current template provider.
- * @type {TemplateProvider}
- * @private
- */
-CommitsModule.prototype._templateProvider = null;
 
 /**
  * Current jQuery instance.
@@ -96,17 +87,16 @@ CommitsModule.prototype.handleDetails = function (isStarted, args, callback) {
 				return;
 			}
 
-			var content = '';
-
-			self._templateProvider
-				.getStream('commits_details', data)
-				.on('data', function (chunk) {content += chunk;})
-				.on('error', callback)
-				.on('end', function () {
+			self.$context.render(self.$context.name, 'details', data,
+				function (error, content) {
+					if (error) {
+						callback(error);
+						return;
+					}
 					self.$(content)
 						.attr('id', 'details-' + args.sha)
 						.insertAfter(link);
-					callback(null);
+					callback();
 				});
 		});
 };
