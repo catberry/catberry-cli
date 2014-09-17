@@ -2,20 +2,15 @@
 
 module.exports = CommitsModule;
 
-var util = require('util'),
-	ModuleBase = require('catberry-module');
-
-util.inherits(CommitsModule, ModuleBase);
+var COMMITS_URL = 'https://api.github.com/repos/catberry/catberry/commits';
 
 /**
  * Creates new instance of Commits module.
  * @param {UHR} $uhr Universal HTTP(S) request.
  * @param {jQuery} $jQuery jQuery library.
  * @constructor
- * @extends ModuleBase
  */
 function CommitsModule($uhr, $jQuery) {
-	ModuleBase.call(this);
 	this._uhr = $uhr;
 	this.$ = $jQuery;
 }
@@ -37,66 +32,52 @@ CommitsModule.prototype.$ = null;
  * Renders commit list of Catberry Framework repository.
  * This method is called when need to render "index" template
  * of module "commits".
- * @param {Function} callback Callback on finish prepare data context.
+ * @returns {Promise<Object>|Object|undefined} Data context.
  */
-CommitsModule.prototype.renderIndex = function (callback) {
-	this._uhr.get('https://api.github.com/repos/catberry/catberry/commits',
-		{},
-		function (error, status, data) {
-			if (error) {
-				callback(error);
-				return;
+CommitsModule.prototype.renderIndex = function () {
+	return this._uhr.get(COMMITS_URL)
+		.then(function (result) {
+			if (result.status.code >= 400 && result.status.code < 600) {
+				throw new Error(result.status.text);
 			}
-			if (status.code >= 400 && status.code < 600) {
-				callback(new Error(status.text));
-				return;
-			}
-			callback(null, {commits: data});
+			return {commits: result.content};
 		});
 };
 
 /**
  * Handles commit details hash change.
- * @param {boolean} isStarted Is hash just set.
- * @param {Object} args Event arguments.
- * @param {Function} callback Callback on finish handling event.
+ * @param {Object} event Event object.
+ * @returns {Promise|undefined} Promise for nothing.
  */
-CommitsModule.prototype.handleDetails = function (isStarted, args, callback) {
-	if (!isStarted) {
-		this.$('#details-' + args.sha).remove();
-		callback();
+CommitsModule.prototype.handleDetails = function (event) {
+	if (event.isEnding) {
+		this.$('#details-' + event.args.sha).remove();
 		return;
 	}
 
 	var self = this,
-		link = this.$('#' + args.sha);
+		link = this.$('#' + event.args.sha);
 
 	link.addClass('loading');
 
-	this._uhr.get('https://api.github.com/repos/catberry/catberry/commits/' +
-			args.sha,
-		{},
-		function (error, status, data) {
+	return this._uhr.get(COMMITS_URL + '/' + event.args.sha)
+		.then(function (result) {
 			link.removeClass('loading');
-			if (error) {
-				callback(error);
-				return;
-			}
-			if (status.code >= 400 && status.code < 600) {
-				callback(new Error(status.text));
-				return;
+			if (result.status.code >= 400 && result.status.code < 600) {
+				throw new Error(result.status.text);
 			}
 
-			self.$context.render(self.$context.name, 'details', data,
-				function (error, content) {
-					if (error) {
-						callback(error);
-						return;
-					}
-					self.$(content)
-						.attr('id', 'details-' + args.sha)
-						.insertAfter(link);
-					callback();
-				});
+			return self.$context.render(
+				self.$context.name, 'details', result.content
+			);
+
+		}, function (reason) {
+			link.removeClass('loading');
+			throw reason;
+		})
+		.then(function (content) {
+			self.$(content)
+				.attr('id', 'details-' + event.args.sha)
+				.insertAfter(link);
 		});
 };

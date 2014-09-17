@@ -8,18 +8,12 @@ var http = require('http'),
 	path = require('path'),
 	publicPath = path.join(__dirname, 'public'),
 	connect = require('connect'),
-	config = require('./config/server.json'),
+	config = require('./config/environment.json'),
 	cat = catberry.create(config),
 	app = connect();
 
 config.publicPath = publicPath;
 config.isRelease = isRelease === undefined ? config.isRelease : isRelease;
-
-// turn on GZIP when in release mode
-if (isRelease) {
-	var compression = require('compression');
-	app.use(compression());
-}
 
 var serveStatic = require('serve-static');
 app.use(serveStatic(publicPath));

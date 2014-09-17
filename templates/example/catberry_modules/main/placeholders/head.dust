@@ -4,4 +4,4 @@
 <title>{title} - {subtitle}</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/loader.css" rel="stylesheet">
-<script src="/catberry.js"></script>
+<script src="/bundle.js"></script>
