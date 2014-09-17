@@ -2,19 +2,14 @@
 
 module.exports = AboutModule;
 
-var util = require('util'),
-	ModuleBase = require('catberry-module');
-
-util.inherits(AboutModule, ModuleBase);
+var README_URL = 'https://api.github.com/repos/catberry/catberry/readme';
 
 /**
  * Creates new instance of About module.
  * @param {UHR} $uhr Universal HTTP(S) request.
  * @constructor
- * @extends ModuleBase
  */
 function AboutModule($uhr) {
-	ModuleBase.call(this);
 	this._uhr = $uhr;
 }
 
@@ -28,23 +23,18 @@ AboutModule.prototype._uhr = null;
 /**
  * Renders document about Catberry Framework.
  * This method is called when need to render "index" template of module "about".
- * @param {Function} callback Callback on finish prepare data context.
+ * @returns {Promise<Object>|Object|undefined} Data context.
  */
-AboutModule.prototype.renderIndex = function (callback) {
-	this._uhr.get('https://api.github.com/repos/catberry/catberry/readme', {
-			headers: {
-				Accept: 'application/vnd.github.VERSION.html+json'
+AboutModule.prototype.renderIndex = function () {
+	return this._uhr.get(README_URL, {
+		headers: {
+			Accept: 'application/vnd.github.VERSION.html+json'
+		}
+	})
+		.then(function (result) {
+			if (result.status.code >= 400 && result.status.code < 600) {
+				throw new Error(result.status.text);
 			}
-		},
-		function (error, status, data) {
-			if (error) {
-				callback(error);
-				return;
-			}
-			if (status.code >= 400 && status.code < 600) {
-				callback(new Error(status.text));
-				return;
-			}
-			callback(null, {html: data});
+			return {html: result.content};
 		});
 };
