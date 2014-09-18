@@ -37,6 +37,8 @@
 
 	"excludeFiles": [
 		"./**/node_modules/**",
-		"./node_modules/**"
+		"./node_modules/**",
+		"./templates/example/public/**",
+		"./templates/empty/public/**"
 	]
 }
