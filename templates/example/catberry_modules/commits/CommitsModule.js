@@ -2,22 +2,33 @@
 
 module.exports = CommitsModule;
 
-var util = require('util'),
-	ModuleBase = require('catberry-module');
+var util = require('util');
 
-util.inherits(CommitsModule, ModuleBase);
+var COMMITS_URL = 'https://api.github.com/repos/catberry/catberry/commits',
+	COMMITS_PAGE_URL_FORMAT = COMMITS_URL + '?page=%d&per_page=%d',
+	PER_PAGE = 50;
 
 /**
  * Creates new instance of Commits module.
  * @param {UHR} $uhr Universal HTTP(S) request.
  * @param {jQuery} $jQuery jQuery library.
+ * @param {ServiceLocator} $serviceLocator Service locator to resolve plugin.
  * @constructor
- * @extends ModuleBase
  */
-function CommitsModule($uhr, $jQuery) {
-	ModuleBase.call(this);
+function CommitsModule($uhr, $jQuery, $serviceLocator) {
 	this._uhr = $uhr;
 	this.$ = $jQuery;
+	if (this.$context.isBrowser) {
+		this.lazyLoader = $serviceLocator.resolve('lazyLoader');
+		this.lazyLoader.containerId = 'commits-feed';
+		this.lazyLoader.loaderId = 'commits-loader';
+		this.lazyLoader.moreItemsCount = PER_PAGE;
+		this.lazyLoader.maxItemsCount = 10000;
+		this.lazyLoader.itemTemplateName = 'commits__item';
+		// factory to get next N items from data source
+		this.lazyLoader.factory =
+			CommitsModule.prototype.itemsFactory.bind(this);
+	}
 }
 
 /**
@@ -34,69 +45,108 @@ CommitsModule.prototype._uhr = null;
 CommitsModule.prototype.$ = null;
 
 /**
+ * Current lazy loader for infinite scroll.
+ * @type {LazyLoader}
+ * @private
+ */
+CommitsModule.prototype.lazyLoader = null;
+
+/**
+ * Current page number.
+ * @type {number}
+ * @private
+ */
+CommitsModule.prototype._page = 1;
+
+/**
  * Renders commit list of Catberry Framework repository.
  * This method is called when need to render "index" template
  * of module "commits".
- * @param {Function} callback Callback on finish prepare data context.
+ * @returns {Promise<Object>|Object|undefined} Data context.
  */
-CommitsModule.prototype.renderIndex = function (callback) {
-	this._uhr.get('https://api.github.com/repos/catberry/catberry/commits',
-		{},
-		function (error, status, data) {
-			if (error) {
-				callback(error);
-				return;
+CommitsModule.prototype.renderIndex = function () {
+	return this.getItems(1, PER_PAGE)
+		.then(function (items) {
+			return {commits: items};
+		});
+};
+
+/**
+ * Does something after index placeholder is rendered.
+ * This method is invoked only in browser.
+ */
+CommitsModule.prototype.afterRenderIndex = function () {
+	this.lazyLoader.enableInfiniteScroll();
+};
+
+/**
+ * Current factory for feed items.
+ * @param {jQuery} last Last element in feed.
+ * @param {number} limit How many items to load.
+ * @returns {Promise<Array>} Promise for next chunk of items.
+ */
+CommitsModule.prototype.itemsFactory = function (last, limit) {
+	var self = this;
+	return this.getItems(this._page + 1, limit)
+		.then(function (items) {
+			self._page++;
+			return items;
+		});
+};
+
+/**
+ * Gets specified page of items.
+ * @param {number} page Page number.
+ * @param {number} limit Items count to load.
+ * @returns {Promise<Array>} Promise for items.
+ */
+CommitsModule.prototype.getItems = function (page, limit) {
+	return this._uhr.get(
+		util.format(COMMITS_PAGE_URL_FORMAT, page, limit)
+	)
+		.then(function (result) {
+			if (result.status.code >= 400 && result.status.code < 600) {
+				throw new Error(result.status.text);
 			}
-			if (status.code >= 400 && status.code < 600) {
-				callback(new Error(status.text));
-				return;
-			}
-			callback(null, {commits: data});
+
+			return result.content;
 		});
 };
 
 /**
  * Handles commit details hash change.
- * @param {boolean} isStarted Is hash just set.
- * @param {Object} args Event arguments.
- * @param {Function} callback Callback on finish handling event.
+ * @param {Object} event Event object.
+ * @returns {Promise|undefined} Promise for nothing.
  */
-CommitsModule.prototype.handleDetails = function (isStarted, args, callback) {
-	if (!isStarted) {
-		this.$('#details-' + args.sha).remove();
-		callback();
+CommitsModule.prototype.handleDetails = function (event) {
+	if (event.isEnding) {
+		this.$('#details-' + event.args.sha).remove();
 		return;
 	}
 
 	var self = this,
-		link = this.$('#' + args.sha);
+		link = this.$('#' + event.args.sha);
 
 	link.addClass('loading');
 
-	this._uhr.get('https://api.github.com/repos/catberry/catberry/commits/' +
-			args.sha,
-		{},
-		function (error, status, data) {
+	return this._uhr.get(COMMITS_URL + '/' + event.args.sha)
+		.then(function (result) {
 			link.removeClass('loading');
-			if (error) {
-				callback(error);
-				return;
-			}
-			if (status.code >= 400 && status.code < 600) {
-				callback(new Error(status.text));
-				return;
+			if (result.status.code >= 400 && result.status.code < 600) {
+				throw new Error(result.status.text);
 			}
 
-			self.$context.render(self.$context.name, 'details', data,
-				function (error, content) {
-					if (error) {
-						callback(error);
-						return;
-					}
-					self.$(content)
-						.attr('id', 'details-' + args.sha)
-						.insertAfter(link);
-					callback();
-				});
+			return self.$context.render(
+				self.$context.name, 'details', result.content
+			);
+
+		}, function (reason) {
+			link.removeClass('loading');
+			throw reason;
+		})
+		.then(function (content) {
+			self.$(content)
+				.attr('id', 'details-' + event.args.sha)
+				.insertAfter(link);
 		});
 };
