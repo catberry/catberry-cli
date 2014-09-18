@@ -10,6 +10,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"catberry": "^2.0.0",
+		"catberry-lazy-loader": "^2.0.0",
 		"connect": "^3.0.0",
 		"serve-static": "^1.0.0",
 		"errorhandler": "^1.0.0"

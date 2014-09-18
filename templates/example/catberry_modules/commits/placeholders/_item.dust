@@ -1,0 +1,3 @@
+<a id="{.sha}" href="#show-details-{.sha}" class="list-group-item">
+	{.commit.message} ({.commit.author.name})
+</a>
