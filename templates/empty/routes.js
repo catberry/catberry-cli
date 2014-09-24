@@ -1,5 +1,6 @@
 'use strict';
 
+// jscs:disable maximumLineLength
 // This file contains definitions of rules how location URLs are translated
 // to "render" methods of catberry's modules.
 //
