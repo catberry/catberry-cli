@@ -1,5 +1,6 @@
 'use strict';
 
+// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 module.exports = __ModuleName__Module;
 
 /**
