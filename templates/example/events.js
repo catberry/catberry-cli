@@ -1,5 +1,6 @@
 'use strict';
 
+// jscs:disable maximumLineLength
 // This file contains definitions of rules how events from page are translated
 // to "handle" methods of catberry's modules.
 //
