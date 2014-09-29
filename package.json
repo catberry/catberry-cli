@@ -25,6 +25,7 @@
 	"bin": {
 		"catberry": "./bin/catberry.js"
 	},
+	"preferGlobal": true,
 	"dependencies": {
 		"ncp": "~0.6.0",
 		"split": "~0.3.0",
