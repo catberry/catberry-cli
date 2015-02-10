@@ -1,6 +1,0 @@
-<div id="commits-feed" class="list-group">
-	{#.commits}
-		{>"commits__item"/}
-	{/.commits}
-</div>
-<div id="commits-loader" class="loading" style="display: none"></div>

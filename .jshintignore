@@ -1,4 +1,3 @@
-templates/example/public
-templates/example/node_modules
-module_presets/other
+templates
+module_presets
 node_modules
