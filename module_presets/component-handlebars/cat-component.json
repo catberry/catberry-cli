@@ -1,0 +1,5 @@
+{
+	"name": "__name__",
+	"template": "./template.hbs",
+	"errorTemplate": "./error.hbs"
+}
