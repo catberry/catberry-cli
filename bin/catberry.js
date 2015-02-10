@@ -58,6 +58,7 @@ program
 	.command('addcomp <component_name>')
 	.description('Add Catberry components to current project')
 	.option('-D, --dest <path>', 'change destination directory')
+	.option('-P, --preset <name>', 'change default component preset')
 	.action(function (componentName, options) {
 		templateManager.addComponent(componentName, options);
 	});
