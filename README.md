@@ -34,7 +34,7 @@ catberry addstore [--dest=directory] <storeName>
 ```bash
 catberry addcomp [--dest=directory] [--preset=handlebars] <componentName>
 ```
-Also you can use:
+Also you can use `preset` values such as:
 
 * `handlebars` (by default)
 * `dust`
