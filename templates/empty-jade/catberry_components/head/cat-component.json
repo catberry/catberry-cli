@@ -1,0 +1,5 @@
+{
+	"name": "head",
+	"template": "./head.jade",
+	"logic": "./Head.js"
+}

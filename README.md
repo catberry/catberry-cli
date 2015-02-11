@@ -21,6 +21,7 @@ Included templates:
 how to implement such isomorphic application using Catberry Framework
 * `empty-handlebars` - empty project using [Handlebars](http://handlebarsjs.com/) template engine.
 * `empty-dust` - empty project using [Dust](https://github.com/catberry/catberry-dust) template engine.
+* `empty-jade` - empty project using [Jade](http://jade-lang.com/) template engine.
 
 ###Add [Store](https://github.com/catberry/catberry/blob/master/docs/index.md#stores) to the project
  
@@ -33,8 +34,11 @@ catberry addstore [--dest=directory] <storeName>
 ```bash
 catberry addcomp [--dest=directory] [--preset=handlebars] <componentName>
 ```
-Also you can use `dust` preset if you want to create cat-component with Dust
-templates.
+Also you can use:
+
+* `handlebars` (by default)
+* `dust`
+* `jade`
 
 ##Installation
 
