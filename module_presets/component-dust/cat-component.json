@@ -1,0 +1,5 @@
+{
+	"name": "__name__",
+	"template": "./template.dust",
+	"errorTemplate": "./error.dust"
+}
