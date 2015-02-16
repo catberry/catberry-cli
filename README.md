@@ -1,16 +1,16 @@
-#Catberry CLI [![Build Status](https://travis-ci.org/catberry/catberry-cli.png?branch=master)](https://travis-ci.org/catberry/catberry-cli)
+# Catberry CLI [![Build Status](https://travis-ci.org/catberry/catberry-cli.png?branch=master)](https://travis-ci.org/catberry/catberry-cli)
 
 [![NPM](https://nodei.co/npm/catberry-cli.png)](https://nodei.co/npm/catberry-cli/)
 
 ![Catberry](https://raw.githubusercontent.com/catberry/catberry/master/docs/images/logo.png)
 
-##What is it?
+## What is it?
 This is a Command Line Interface for [Catberry Framework](https://github.com/catberry/catberry)
 that helps to create projects.
 
 It helps to:
 
-###Create Catberry Applications using project template
+### Create Catberry Applications using project template
 
 ```bash
 catberry init [--dest=directory] <template>
@@ -23,13 +23,13 @@ how to implement such isomorphic application using Catberry Framework
 * `empty-dust` - empty project using [Dust](https://github.com/catberry/catberry-dust) template engine.
 * `empty-jade` - empty project using [Jade](http://jade-lang.com/) template engine.
 
-###Add [Store](https://github.com/catberry/catberry/blob/master/docs/index.md#stores) to the project
+### Add [Store](https://github.com/catberry/catberry/blob/master/docs/index.md#stores) to the project
  
 ```bash
 catberry addstore [--dest=directory] <storeName>
 ```
 
-###Add [Cat-component](https://github.com/catberry/catberry/blob/master/docs/index.md#cat-components) to the project
+### Add [Cat-component](https://github.com/catberry/catberry/blob/master/docs/index.md#cat-components) to the project
 
 ```bash
 catberry addcomp [--dest=directory] [--preset=handlebars] <componentName>
@@ -40,7 +40,7 @@ Also you can use `preset` values such as:
 * `dust`
 * `jade`
 
-##Installation
+## Installation
 
 ```bash
 npm -g install catberry-cli
@@ -48,7 +48,7 @@ npm -g install catberry-cli
 
 To get more usage details `catberry --help`
 
-##Contribution
+## Contribution
 If you have found a bug, please create pull request with [mocha](https://www.npmjs.org/package/mocha) 
 unit-test which reproduces it or describe all details in an issue if you can not
 implement test. If you want to propose some improvements just create an issue or
