@@ -33,7 +33,7 @@
 		"commander": "^2.6.0"
 	},
 	"devDependencies": {
-		"jscs": "^1.11.2",
+		"jscs": "~1.6.2",
 		"jshint": "^2.6.0"
 	},
 	"engines": {
