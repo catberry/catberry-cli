@@ -1,0 +1,5 @@
+{
+	"name": "commits-list",
+	"template": "./template.hbs",
+	"errorTemplate": "./error.hbs"
+}

@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<ul class="list-inline">
+			<li>
+				<span class="glyphicon glyphicon-plus"></span>
+			</li>
+			<li class="additions">{{stats.additions}}</li>
+			<li>
+				<span class="glyphicon glyphicon-minus"></span>
+			</li>
+			<li class="deletions">{{stats.deletions}}</li>
+			<li>
+				<span class="glyphicon glyphicon-asterisk"></span>
+			</li>
+			<li class="total">{{stats.total}}</li>
+			<li>
+				<span class="glyphicon glyphicon-comment"></span>
+			</li>
+			<li class="comment-count">{{commit.comment_count}}</li>
+			<li>
+				<a target="_blank" class="comments-link" href="{{html_url}}">
+					Show comments
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
