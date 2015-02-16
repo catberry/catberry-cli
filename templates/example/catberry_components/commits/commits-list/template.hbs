@@ -1,0 +1,5 @@
+{{#each commits}}
+	<a id="{{sha}}" href="#" class="list-group-item js-commit">
+		{{commit.message}} ({{commit.author.name}})
+	</a>
+{{/each}}

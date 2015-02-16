@@ -1,0 +1,4 @@
+{
+	"name": "pages-content",
+	"template": "./template.hbs"
+}
