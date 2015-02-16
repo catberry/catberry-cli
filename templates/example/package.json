@@ -16,7 +16,7 @@
 		"errorhandler": "^1.0.0"
 	},
 	"engines": {
-		"node": ">=0.12"
+		"node": ">=0.10"
 	},
 	"scripts": {
 		"start": "npm run release",
