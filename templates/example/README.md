@@ -13,7 +13,7 @@ First of all it is needed to install dependencies:
 npm install
 ```
 
-Then to start in `debug` mode without script minification and with file watch:
+Then to start in `debug` mode without script minification and with file watching:
 
 ```
 npm run debug
