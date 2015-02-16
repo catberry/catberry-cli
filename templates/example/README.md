@@ -1,8 +1,8 @@
-#Catberry Example Project
+# Catberry Example Project
 
 ![Catberry](https://raw.githubusercontent.com/catberry/catberry/master/docs/images/logo.png)
 
-##How to use
+## How to use
 This is a simple web-application that works with [GitHub API](http://developer.github.com/)
 and demonstrates how to build isomorphic web-application using 
 [Catberry Framework](https://github.com/catberry/catberry).
@@ -25,7 +25,7 @@ To start in `release` mode:
 npm start
 ```
 
-##Contribution
+## Contribution
 If you have found a bug, please create pull request with [mocha](https://www.npmjs.org/package/mocha) 
 unit-test which reproduces it or describe all details in an issue if you can not
 implement test. If you want to propose some improvements just create an issue or

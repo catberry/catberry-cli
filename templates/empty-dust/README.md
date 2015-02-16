@@ -1,8 +1,8 @@
-#Catberry Empty Project
+# Catberry Empty Project
 
 ![Catberry](https://raw.githubusercontent.com/catberry/catberry/master/docs/images/logo.png)
 
-##How to use
+## How to use
 
 This application only shows "Hello, world!" page.
 
@@ -24,7 +24,7 @@ To start in `release` mode:
 npm start
 ```
 
-##Contribution
+## Contribution
 If you have found a bug, please create pull request with [mocha](https://www.npmjs.org/package/mocha) 
 unit-test which reproduces it or describe all details in an issue if you can not
 implement test. If you want to propose some improvements just create an issue or
