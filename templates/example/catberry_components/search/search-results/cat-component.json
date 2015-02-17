@@ -1,0 +1,4 @@
+{
+	"name": "search-results",
+	"template": "./template.hbs"
+}

@@ -1,0 +1,5 @@
+{
+	"name": "head",
+	"template": "./head.dust",
+	"logic": "./Head.js"
+}

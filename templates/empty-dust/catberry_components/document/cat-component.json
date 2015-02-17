@@ -1,0 +1,5 @@
+{
+	"name": "document",
+	"template": "./document.dust",
+	"logic": "./Document.js"
+}

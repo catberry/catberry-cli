@@ -1,0 +1,11 @@
+<cat-loader id="pages-content-loader"></cat-loader>
+{{#if isActive.about}}
+	<cat-about id="pages-content-about" cat-store="About" ></cat-about>
+{{/if}}
+{{#if isActive.commits}}
+	<cat-commits-list id="pages-content-commits" cat-store="commits/List" ></cat-commits-list>
+{{/if}}
+{{#if isActive.search}}
+	<cat-search-form id="pages-content-search" cat-store="commits/Search" ></cat-search-form>
+	<cat-search-results id="pages-content-search-results" cat-store="commits/Search" ></cat-search-results>
+{{/if}}

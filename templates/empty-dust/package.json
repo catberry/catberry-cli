@@ -1,0 +1,27 @@
+{
+	"name": "catberry-project",
+	"version": "0.0.0",
+	"description": "Empty project based on Catberry Framework",
+	"main": "./server.js",
+	"browser": {
+		"./config/environment.js": "./config/browser.js"
+	},
+	"author": "Catberry",
+	"license": "MIT",
+	"dependencies": {
+		"catberry": "^4.0.0",
+		"catberry-dust": "^3.0.0",
+		"connect": "^3.0.0",
+		"serve-static": "^1.0.0",
+		"errorhandler": "^1.0.0"
+	},
+	"engines": {
+		"node": ">=0.10"
+	},
+	"scripts": {
+		"start": "npm run release",
+		"release": "node ./build.js release && node ./server.js release",
+		"debug": "node ./build.js & node ./server.js",
+		"debug-win": "start /B node ./build.js && start /B node ./server.js"
+	}
+}
