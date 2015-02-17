@@ -1,0 +1,6 @@
+{
+	"name": "hello-world",
+	"template": "./hello.hbs",
+	"errorTemplate": "./error.hbs",
+	"logic": "./HelloWorld.js"
+}

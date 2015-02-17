@@ -10,6 +10,6 @@
 // https://github.com/catberry/catberry/blob/master/docs/index.md#url-route-definition
 
 module.exports = [
-	'/:page[main, pages]',
-	'/:page[main, pages]?query=:query[search]'
+	'/:page[Pages]',
+	'/:page[Pages]?query=:query[commits/Search]'
 ];

@@ -1,0 +1,6 @@
+{
+	"name": "hello-world",
+	"template": "./hello.dust",
+	"errorTemplate": "./error.dust",
+	"logic": "./HelloWorld.js"
+}
