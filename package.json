@@ -1,6 +1,6 @@
 {
 	"name": "catberry-cli",
-	"version": "4.0.2",
+	"version": "4.0.3",
 	"author": "Denis Rechkunov <denis.rechkunov@gmail.com>",
 	"description": "CLI utility for Catberry Framework",
 	"homepage": "https://github.com/catberry/catberry-cli",
@@ -27,10 +27,10 @@
 	},
 	"preferGlobal": true,
 	"dependencies": {
-		"ncp": "^1.0.1",
+		"ncp": "^2.0.0",
 		"mkdirp": "~0.5.0",
 		"split": "~0.3.3",
-		"commander": "^2.6.0"
+		"commander": "^2.7.1"
 	},
 	"devDependencies": {
 		"jscs": "~1.6.2",
