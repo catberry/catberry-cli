@@ -9,7 +9,7 @@
 	"author": "Catberry",
 	"license": "MIT",
 	"dependencies": {
-		"catberry": "^4.0.0",
+		"catberry": "^5.0.0",
 		"catberry-dust": "^3.0.0",
 		"connect": "^3.0.0",
 		"serve-static": "^1.0.0",
