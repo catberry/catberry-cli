@@ -22,6 +22,6 @@
 		"start": "npm run release",
 		"release": "node ./build.js release && node ./server.js release",
 		"debug": "node ./build.js & node ./server.js",
-		"debug-win": "start /B node ./build.js && start /B node ./server.js"
+		"debug-win": "powershell -Command \"Start-Process -NoNewWindow node ./build.js; Start-Process -NoNewWindow -Wait node ./server.js\""
 	}
 }
