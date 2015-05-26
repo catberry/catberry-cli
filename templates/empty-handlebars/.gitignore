@@ -1,0 +1,22 @@
+# Catberry files
+__BrowserBundle.js
+node_modules
+public/bundle.js
+# if you don't need any assets from public directory then uncomment this:
+# public
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+*.lnk
+Desktop.ini
+
+# Linux
+*~
+.directory
