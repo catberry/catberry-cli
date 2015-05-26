@@ -1,11 +1,20 @@
-node_modules
-public/catberry.js
 .idea
-*.log
+
+node_modules
+public/bundle.js
+
+# OS X
 .DS_Store
-.DS_Store?
+.AppleDouble
+.LSOverride
 ._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
+
+# Windows
 Thumbs.db
+ehthumbs.db
+*.lnk
+Desktop.ini
+
+# Linux
+*~
+.directory
