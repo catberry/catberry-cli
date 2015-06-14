@@ -4,7 +4,7 @@
 	"description": "Example Application based on Catberry Framework",
 	"main": "./server.js",
 	"browser": {
-		"./config/environment.js": "./config/browser.js"
+		"./config/environment.json": "./config/browser.json"
 	},
 	"author": "Catberry",
 	"license": "MIT",

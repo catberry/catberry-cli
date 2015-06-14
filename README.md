@@ -2,7 +2,9 @@
 
 [![NPM](https://nodei.co/npm/catberry-cli.png)](https://nodei.co/npm/catberry-cli/)
 
-![Catberry](https://raw.githubusercontent.com/catberry/catberry/master/docs/images/logo.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/catberry/catberry/master/docs/images/logo.png" />
+</p>
 
 ## What is it?
 This is a Command Line Interface for [Catberry Framework](https://github.com/catberry/catberry)
@@ -48,15 +50,14 @@ npm -g install catberry-cli
 
 To get more usage details `catberry --help`
 
-## Contribution
-If you have found a bug, please create pull request with [mocha](https://www.npmjs.org/package/mocha) 
-unit-test which reproduces it or describe all details in an issue if you can not
-implement test. If you want to propose some improvements just create an issue or
-a pull request but please do not forget to use `npm test` to be sure that your
-code is awesome.
+## Contributing
 
-All changes should satisfy this [Code Style Guide](https://github.com/catberry/catberry/blob/4.0.0/docs/code-style-guide.md).
+There are a lot of ways to contribute:
 
-Also your changes should be covered by unit tests using [mocha](https://www.npmjs.org/package/mocha).
+* Give it a star
+* Join the [Gitter](https://gitter.im/catberry/catberry) room and leave a feedback or help with answering users' questions
+* [Submit a bug or a feature request](https://github.com/catberry/catberry-cli/issues)
+* [Submit a PR](https://github.com/catberry/catberry-cli/blob/develop/CONTRIBUTING.md)
+* If you like the logo, you might want to buy a Catberry [T-Shirt](http://www.redbubble.com/people/catberryjs/works/14439373-catberry-js-framework-logo?p=t-shirt) or a [sticker](http://www.redbubble.com/people/catberryjs/works/14439373-catberry-js-framework-logo?p=sticker)
 
 Denis Rechkunov <denis.rechkunov@gmail.com>
