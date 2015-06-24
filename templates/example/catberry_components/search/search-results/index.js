@@ -25,16 +25,3 @@ function SearchResults() {
 SearchResults.prototype.render = function () {
 	return this.$context.getStoreData();
 };
-
-/**
- * Returns event binding settings for the component.
- * This method is optional.
- * @returns {Promise<Object>|Object|null|undefined} Binding settings.
- */
-SearchResults.prototype.bind = function () {
-	return {
-		submit: {
-			form: this._handleFormSubmit
-		}
-	};
-};
