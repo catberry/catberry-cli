@@ -12,6 +12,4 @@ module.exports = Loader;
  * Creates new instance of the "loader" component.
  * @constructor
  */
-function Loader() {
-
-}
+function Loader() { }

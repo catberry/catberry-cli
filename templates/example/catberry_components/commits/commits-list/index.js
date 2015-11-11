@@ -10,6 +10,7 @@ module.exports = CommitsList;
 
 /**
  * Creates new instance of the "commits-list" component.
+ * @param {ServiceLocator} $serviceLocator Service locator.
  * @constructor
  */
 function CommitsList($serviceLocator) {
@@ -36,7 +37,9 @@ CommitsList.prototype._window = null;
 CommitsList.prototype.render = function () {
 	return this.$context.getStoreData()
 		.then(function (result) {
-			return {commits: result};
+			return {
+				commits: result
+			};
 		});
 };
 
@@ -160,7 +163,9 @@ CommitsList.prototype._showDetailsLoader = function (commitElement) {
 	var commitSha = commitElement.getAttribute('id'),
 		loaderId = 'loader-' + commitSha,
 		self = this;
-	return this.$context.createComponent('cat-loader', {id: loaderId})
+	return this.$context.createComponent('cat-loader', {
+			id: loaderId
+		})
 		.then(function (element) {
 			self._insertAfterCommit(commitElement, element);
 		});

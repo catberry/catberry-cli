@@ -12,14 +12,14 @@ module.exports = Main;
  * Creates new instance of "Main" store.
  * @constructor
  */
-function Main() {
-
-}
+function Main() { }
 
 /**
  * Loads data from somewhere.
  * @returns {Object} Data object.
  */
 Main.prototype.load = function () {
-	return {who: 'World'};
+	return {
+		who: 'World'
+	};
 };

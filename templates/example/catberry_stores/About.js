@@ -46,6 +46,8 @@ About.prototype.load = function () {
 			if (result.status.code >= 400 && result.status.code < 600) {
 				throw new Error(result.status.text);
 			}
-			return {readmeHTML: result.content};
+			return {
+				readmeHTML: result.content
+			};
 		});
 };

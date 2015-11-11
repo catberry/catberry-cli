@@ -12,9 +12,7 @@ module.exports = SearchForm;
  * Creates new instance of the "search-form" component.
  * @constructor
  */
-function SearchForm() {
-
-}
+function SearchForm() { }
 
 /**
  * Gets data context for template engine.
@@ -42,6 +40,7 @@ SearchForm.prototype.bind = function () {
 
 /**
  * Handles click on submit button.
+ * @param {Event} event DOM event.
  * @private
  */
 SearchForm.prototype._handleFormSubmit = function (event) {
@@ -53,7 +52,7 @@ SearchForm.prototype._handleFormSubmit = function (event) {
 
 /**
  * Gets current specified query.
- * @returns {string}
+ * @returns {string} Query text.
  */
 SearchForm.prototype.getQuery = function () {
 	return this.$context.element
@@ -66,7 +65,7 @@ SearchForm.prototype.getQuery = function () {
  */
 SearchForm.prototype.hideLoader = function () {
 	var loaders = this.$context.element.getElementsByTagName('cat-loader');
-	for(var i = 0; i < loaders.length; i++) {
+	for (var i = 0; i < loaders.length; i++) {
 		loaders[i].style.display = 'none';
 	}
 };
@@ -76,7 +75,7 @@ SearchForm.prototype.hideLoader = function () {
  */
 SearchForm.prototype.showLoader = function () {
 	var loaders = this.$context.element.getElementsByTagName('cat-loader');
-	for(var i = 0; i < loaders.length; i++) {
+	for (var i = 0; i < loaders.length; i++) {
 		loaders[i].style.display = '';
 	}
 };

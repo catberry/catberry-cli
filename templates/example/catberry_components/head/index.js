@@ -12,8 +12,7 @@ module.exports = Head;
  * Creates new instance of the "head" component.
  * @constructor
  */
-function Head() {
-}
+function Head() { }
 
 /**
  * Gets data context for template engine.

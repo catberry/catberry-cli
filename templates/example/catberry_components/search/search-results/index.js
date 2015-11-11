@@ -12,9 +12,7 @@ module.exports = SearchResults;
  * Creates new instance of the "search-results" component.
  * @constructor
  */
-function SearchResults() {
-
-}
+function SearchResults() { }
 
 /**
  * Gets data context for template engine.

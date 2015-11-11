@@ -12,9 +12,7 @@ module.exports = About;
  * Creates new instance of the "about" component.
  * @constructor
  */
-function About() {
-
-}
+function About() { }
 
 /**
  * Gets data context for template engine.
