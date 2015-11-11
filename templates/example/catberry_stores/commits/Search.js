@@ -49,6 +49,7 @@ Search.prototype.load = function () {
 				throw new Error(result.status.text);
 			}
 			result.content.query = query;
+			// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 			result.content.hasResults = (result.content.total_count > 0);
 			return result.content;
 		});

@@ -12,6 +12,4 @@ module.exports = Document;
  * Creates new instance of the "document" component.
  * @constructor
  */
-function Document() {
-
-}
+function Document() { }

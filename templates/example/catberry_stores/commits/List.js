@@ -96,6 +96,7 @@ List.prototype.getItems = function (page, limit) {
 
 /**
  * Handles action named "some-action" from any component.
+ * @param {Object} args Actions arguments.
  * @returns {Promise<Object>|Object|null|undefined} Response to component.
  */
 List.prototype.handleGetDetails = function (args) {

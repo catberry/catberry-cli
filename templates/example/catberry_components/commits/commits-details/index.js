@@ -12,18 +12,16 @@ module.exports = CommitsDetails;
  * Creates new instance of the "commits-details" component.
  * @constructor
  */
-function CommitsDetails() {
-
-}
+function CommitsDetails() { }
 
 /**
  * Set the entire details object for the commit.
  * @param {Object} details Commit details.
- * @param {Number} details.stats.additions Count of additions.
- * @param {Number} details.stats.deletions Count of deletions.
- * @param {Number} details.stats.total Count of total changes.
- * @param {Number} details.stats.commit.comment_count Count of comments.
- * @param {Number} details.html_url Link to commit page.
+ * @param {number} details.stats.additions Count of additions.
+ * @param {number} details.stats.deletions Count of deletions.
+ * @param {number} details.stats.total Count of total changes.
+ * @param {number} details.stats.commit.comment_count Count of comments.
+ * @param {number} details.html_url Link to commit page.
  */
 CommitsDetails.prototype.setDetails = function (details) {
 	// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
@@ -36,7 +34,7 @@ CommitsDetails.prototype.setDetails = function (details) {
 
 /**
  * Set total addition count.
- * @param {Number} count Count of addition changes.
+ * @param {number} count Count of addition changes.
  */
 CommitsDetails.prototype.setAdditions = function (count) {
 	this.$context.element
@@ -45,7 +43,7 @@ CommitsDetails.prototype.setAdditions = function (count) {
 
 /**
  * Set total deletion count.
- * @param {Number} count Count of deletion changes.
+ * @param {number} count Count of deletion changes.
  */
 CommitsDetails.prototype.setDeletions = function (count) {
 	this.$context.element
@@ -54,7 +52,7 @@ CommitsDetails.prototype.setDeletions = function (count) {
 
 /**
  * Set total change count of the commit.
- * @param {Number} count Count of total changes.
+ * @param {number} count Count of total changes.
  */
 CommitsDetails.prototype.setTotal = function (count) {
 	this.$context.element
@@ -63,7 +61,7 @@ CommitsDetails.prototype.setTotal = function (count) {
 
 /**
  * Sets comment count of the commit.
- * @param {Number} count Comment count.
+ * @param {number} count Comment count.
  */
 CommitsDetails.prototype.setCommentCount = function (count) {
 	this.$context.element
@@ -72,7 +70,7 @@ CommitsDetails.prototype.setCommentCount = function (count) {
 
 /**
  * Sets link to the comments page of the commit.
- * @param {String} link URL to comments page.
+ * @param {string} link URL to comments page.
  */
 CommitsDetails.prototype.setCommentLink = function (link) {
 	this.$context.element
