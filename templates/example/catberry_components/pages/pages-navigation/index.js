@@ -12,9 +12,7 @@ module.exports = PagesNavigation;
  * Creates new instance of the "pages-navigation" component.
  * @constructor
  */
-function PagesNavigation() {
-
-}
+function PagesNavigation() { }
 
 /**
  * Gets data context for template engine.
