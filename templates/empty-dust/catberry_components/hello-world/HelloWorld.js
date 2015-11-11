@@ -12,9 +12,7 @@ module.exports = HelloWorld;
  * Creates new instance of "hello-world" component.
  * @constructor
  */
-function HelloWorld() {
-
-}
+function HelloWorld() { }
 
 /**
  * Gets data for template.

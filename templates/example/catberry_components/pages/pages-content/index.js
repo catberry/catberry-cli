@@ -12,9 +12,7 @@ module.exports = PagesContent;
  * Creates new instance of the "pages-content" component.
  * @constructor
  */
-function PagesContent() {
-
-}
+function PagesContent() { }
 
 /**
  * Gets data context for template engine.
@@ -28,8 +26,6 @@ PagesContent.prototype.render = function () {
 
 /**
  * Returns event binding settings for the component.
- * This method is optional.
- * @returns {Promise<Object>|Object|null|undefined} Binding settings.
  */
 PagesContent.prototype.bind = function () {
 	this.hideLoader();
