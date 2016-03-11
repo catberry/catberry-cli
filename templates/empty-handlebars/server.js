@@ -1,20 +1,18 @@
 'use strict';
 
-var catberry = require('catberry'),
-	isRelease = process.argv.length === 3 ?
+const catberry = require('catberry');
+const isRelease = process.argv.length === 3 ?
 		process.argv[2] === 'release' : undefined;
 
-var http = require('http'),
-	util = require('util'),
-	path = require('path'),
-	publicPath = path.join(__dirname, 'public'),
-	connect = require('connect'),
-	config = require('./config/environment.json'),
-	templateEngine = require('catberry-handlebars'),
-	cat = catberry.create(config),
-	app = connect();
-
-var READY_MESSAGE = 'Ready to handle incoming requests on port %d';
+const http = require('http');
+const util = require('util');
+const path = require('path');
+const publicPath = path.join(__dirname, 'public');
+const connect = require('connect');
+const config = require('./config/environment.json');
+const templateEngine = require('catberry-handlebars');
+const cat = catberry.create(config);
+const app = connect();
 
 config.publicPath = publicPath;
 config.server.port = config.server.port || 3000;
@@ -22,17 +20,17 @@ config.isRelease = isRelease === undefined ? config.isRelease : isRelease;
 
 templateEngine.register(cat.locator);
 
-var serveStatic = require('serve-static');
+const serveStatic = require('serve-static');
 app.use(serveStatic(publicPath));
 
 app.use(cat.getMiddleware());
 
-var errorhandler = require('errorhandler');
+const errorhandler = require('errorhandler');
 app.use(errorhandler());
 
-cat.events.on('ready', function () {
-	var logger = cat.locator.resolve('logger');
-	logger.info(util.format(READY_MESSAGE, config.server.port));
+cat.events.on('ready', () => {
+	const logger = cat.locator.resolve('logger');
+	logger.info(`Ready to handle incoming requests on port ${config.server.port}`);
 });
 
 http
