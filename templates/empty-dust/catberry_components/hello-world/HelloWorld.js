@@ -1,23 +1,20 @@
 'use strict';
 
-module.exports = HelloWorld;
-
 /*
  * This is a Catberry Cat-component file.
  * More details can be found here
- * https://github.com/catberry/catberry/blob/master/docs/index.md#cat-components
+ * http://catberry.org/documentation#cat-components-interface
  */
 
-/**
- * Creates new instance of "hello-world" component.
- * @constructor
- */
-function HelloWorld() { }
+class HelloWorld {
 
-/**
- * Gets data for template.
- * @returns {Promise<Object>} Promise for data.
- */
-HelloWorld.prototype.render = function () {
-	return this.$context.getStoreData();
-};
+	/**
+	 * Gets data for the component's template.
+	 * @returns {Promise<Object>} Promise of data.
+	 */
+	render() {
+		return this.$context.getStoreData();
+	}
+}
+
+module.exports = HelloWorld;
