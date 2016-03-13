@@ -10,3 +10,6 @@
 [submodule "templates/empty-dust"]
 	path = templates/empty-dust
 	url = https://github.com/catberry/catberry-hello-world-dust.git
+[submodule "module_presets"]
+	path = module_presets
+	url = https://github.com/catberry/catberry-module-presets.git
