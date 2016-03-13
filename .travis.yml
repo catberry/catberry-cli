@@ -1,3 +1,11 @@
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/c862b3dde2aeef762073
+      - https://webhooks.gitter.im/e/5763fef442c720162f9a
+    on_success: always  # options: [always|never|change] default: always
+    on_failure: always  # options: [always|never|change] default: always
+    on_start: true     # default: false
 language: node_js
 sudo: false
 node_js:
