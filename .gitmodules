@@ -1,0 +1,3 @@
+[submodule "templates/example"]
+	path = templates/example
+	url = git@github.com:catberry/catberry-example.git
