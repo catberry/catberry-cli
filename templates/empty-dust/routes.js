@@ -1,13 +1,13 @@
 'use strict';
 
-// This file contains definitions of rules how location URLs are translated
-// to parameters for stores in Catberry application.
+// This file contains route definitions – the rules how location URLs are translated
+// to parameters for stores in the Catberry application.
 //
 // Format:
-// /some/:parameter[store1,store2,store3]
+// /some/:parameter[store1,store2,store3]?queryParameter=:queryValue[store1,store2]
 //
 // More details here:
-// https://github.com/catberry/catberry/blob/master/docs/index.md#routing
+// http://catberry.org/documentation#routing
 
 module.exports = [
 	'/'

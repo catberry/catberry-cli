@@ -1,15 +1,11 @@
 'use strict';
 
-module.exports = Document;
-
 /*
  * This is a Catberry Cat-component file.
  * More details can be found here
- * https://github.com/catberry/catberry/blob/master/docs/index.md#cat-components
+ * http://catberry.org/documentation#cat-components-interface
  */
 
-/**
- * Creates new instance of "document" component.
- * @constructor
- */
-function Document() { }
+class Document { }
+
+module.exports = Document;

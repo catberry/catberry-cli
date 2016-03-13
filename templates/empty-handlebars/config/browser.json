@@ -1,3 +1,6 @@
 {
-	"title": "Catberry Project"
+	"title": "Catberry Project",
+	"logger": {
+		"level": 0
+	}
 }

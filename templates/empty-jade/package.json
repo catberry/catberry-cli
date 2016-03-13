@@ -9,11 +9,13 @@
 	"author": "Catberry",
 	"license": "MIT",
 	"dependencies": {
-		"catberry": "^7.0.0",
-		"catberry-jade": "^1.1.6",
-		"connect": "^3.0.0",
-		"serve-static": "^1.0.0",
-		"errorhandler": "^1.0.0"
+		"catberry": "^8.0.0",
+		"catberry-jade": "^2.0.0",
+		"catberry-uhr": "^5.0.0",
+		"catberry-logger": "^1.0.0",
+		"express": "^4.13.4",
+		"serve-static": "^1.10.2",
+		"errorhandler": "^1.4.3"
 	},
 	"engines": {
 		"node": ">=4"

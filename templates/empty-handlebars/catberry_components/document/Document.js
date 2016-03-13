@@ -3,7 +3,7 @@
 /*
  * This is a Catberry Cat-component file.
  * More details can be found here
- * https://github.com/catberry/catberry/blob/master/docs/index.md#cat-components
+ * http://catberry.org/documentation#cat-components-interface
  */
 
 class Document { }

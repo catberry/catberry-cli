@@ -1,6 +1,5 @@
 'use strict';
 
-/* eslint no-useless-constructor: 0*/
 class Main {
 
 	/**

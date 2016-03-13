@@ -1,9 +1,15 @@
 'use strict';
 
+/*
+ * This is a Catberry Cat-component file.
+ * More details can be found here
+ * http://catberry.org/documentation#cat-components-interface
+ */
+
 class Head {
 
 	/**
-	* Creates new instance of "head" component.
+	* Creates a new instance of the "head" component.
 	* @param {ServiceLocator} locator Catberry's service locator.
 	*/
 	constructor(locator) {
