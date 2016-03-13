@@ -3,24 +3,22 @@
 /*
  * This is a Catberry Cat-component file.
  * More details can be found here
- * https://github.com/catberry/catberry/blob/master/docs/index.md#cat-components
+ * http://catberry.org/documentation#cat-components-interface
  */
 
 class __pascalName__ {
 
 	/**
-	 * Creates new instance of the "__name__" component.
+	 * Creates a new instance of the "__name__" component.
 	 */
 	constructor() {
 
-		/* eslint no-useless-constructor: 0*/
 	}
 
 	/**
-	 * Gets data context for template engine.
+	 * Gets a data context for the template engine.
 	 * This method is optional.
-	 * @returns {Promise<Object>|Object|null|undefined} Data context
-	 * for template engine.
+	 * @returns {Promise<Object>|Object|null|undefined} The data context for the template engine.
 	 */
 	render() {
 
@@ -29,16 +27,16 @@ class __pascalName__ {
 	/**
 	 * Returns event binding settings for the component.
 	 * This method is optional.
-	 * @returns {Promise<Object>|Object|null|undefined} Binding settings.
+	 * @returns {Promise<Object>|Object|null|undefined} The binding settings or nothing.
 	 */
 	bind() {
 
 	}
 
 	/**
-	 * Does cleaning for everything that have NOT been set by .bind() method.
+	 * Clans everything up. The events have been set by .bind() method are cleaned automatically.
 	 * This method is optional.
-	 * @returns {Promise|undefined} Promise or nothing.
+	 * @returns {Promise|undefined} Promise or finished work or nothing.
 	 */
 	unbind() {
 
