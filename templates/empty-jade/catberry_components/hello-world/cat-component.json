@@ -1,6 +1,0 @@
-{
-	"name": "hello-world",
-	"template": "./hello.jade",
-	"errorTemplate": "./error.jade",
-	"logic": "./HelloWorld.js"
-}
