@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /*
  * catberry
  *
@@ -31,10 +32,10 @@
 
 'use strict';
 
-var program = require('commander'),
-	templateManager = require('../lib/templateManager'),
-	packageInfo = require('../package.json'),
-	version = packageInfo.version;
+const program = require('commander');
+const templateManager = require('../lib/templateManager');
+const packageInfo = require('../package.json');
+const version = packageInfo.version;
 
 program.version(version);
 
@@ -42,25 +43,25 @@ program
 	.command('init <template>')
 	.description('Initialize Catberry project template')
 	.option('-D, --dest <path>', 'change destination directory')
-	.action(function (templateName, options) {
-		templateManager.initTemplate(templateName, options);
-	});
+	.action((templateName, options) => templateManager
+		.initTemplate(templateName, options)
+	);
 
 program
 	.command('addstore <store_name>')
 	.description('Add Catberry store to current project')
 	.option('-D, --dest <path>', 'change destination directory')
-	.action(function (storeName, options) {
-		templateManager.addStore(storeName, options);
-	});
+	.action((storeName, options) => templateManager
+		.addStore(storeName, options)
+	);
 
 program
 	.command('addcomp <component_name>')
 	.description('Add Catberry components to current project')
 	.option('-D, --dest <path>', 'change destination directory')
 	.option('-P, --preset <name>', 'change default component preset')
-	.action(function (componentName, options) {
-		templateManager.addComponent(componentName, options);
-	});
+	.action((componentName, options) => templateManager
+		.addComponent(componentName, options)
+	);
 
 program.parse(process.argv);
