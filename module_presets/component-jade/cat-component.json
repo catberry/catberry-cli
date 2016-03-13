@@ -1,5 +1,0 @@
-{
-	"name": "__name__",
-	"template": "./template.jade",
-	"errorTemplate": "./error.jade"
-}
