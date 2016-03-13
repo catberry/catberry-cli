@@ -1,3 +1,12 @@
 [submodule "templates/example"]
 	path = templates/example
 	url = https://github.com/catberry/catberry-example.git
+[submodule "templates/empty-handlebars"]
+	path = templates/empty-handlebars
+	url = https://github.com/catberry/catberry-hello-world-handlebars.git
+[submodule "templates/empty-jade"]
+	path = templates/empty-jade
+	url = https://github.com/catberry/catberry-hello-world-jade.git
+[submodule "templates/empty-dust"]
+	path = templates/empty-dust
+	url = https://github.com/catberry/catberry-hello-world-dust.git
