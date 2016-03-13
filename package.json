@@ -5,8 +5,15 @@
 	"description": "CLI utility for Catberry Framework",
 	"homepage": "https://github.com/catberry/catberry-cli",
 	"keywords": [
-		"stream", "web", "isomorphic", "framework", "middleware", "connect",
-		"dust", "module", "express"
+		"progressive rendering",
+		"Web",
+		"isomorphic",
+		"framework",
+		"middleware",
+		"connect",
+		"express",
+		"component",
+		"Flux"
 	],
 	"bugs": {
 		"url": "https://github.com/catberry/catberry-cli/issues",
@@ -37,7 +44,7 @@
 		"commander": "^2.9.0"
 	},
 	"devDependencies": {
-		"eslint": "^2.0.0"
+		"eslint": "^2.2.0"
 	},
 	"engines": {
 		"node": ">=4"
