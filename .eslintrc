@@ -15,7 +15,6 @@
     "no-const-assign": 2,
     "no-dupe-class-members": 2,
     "no-this-before-super": 2,
-    "no-useless-constructor": 2,
     "object-shorthand": 2,
     "prefer-arrow-callback": 2,
     "prefer-const": 2,
