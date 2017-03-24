@@ -44,10 +44,10 @@
 		"commander": "^2.9.0"
 	},
 	"devDependencies": {
-		"eslint": "^2.2.0"
+		"eslint": "^3.18.0"
 	},
 	"engines": {
-		"node": ">=4"
+		"node": ">=6.10.0"
 	},
 	"scripts": {
 		"test": "eslint ./"
