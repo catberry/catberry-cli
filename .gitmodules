@@ -4,12 +4,12 @@
 [submodule "templates/empty-handlebars"]
 	path = templates/empty-handlebars
 	url = https://github.com/catberry/catberry-hello-world-handlebars.git
-[submodule "templates/empty-jade"]
-	path = templates/empty-jade
-	url = https://github.com/catberry/catberry-hello-world-jade.git
 [submodule "templates/empty-dust"]
 	path = templates/empty-dust
 	url = https://github.com/catberry/catberry-hello-world-dust.git
 [submodule "module_presets"]
 	path = module_presets
 	url = https://github.com/catberry/catberry-module-presets.git
+[submodule "templates/empty-pug"]
+	path = templates/empty-pug
+	url = https://github.com/catberry/catberry-hello-world-pug.git

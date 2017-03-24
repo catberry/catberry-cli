@@ -27,7 +27,7 @@ Included templates:
 * `example` - finished project that works with GitHub API and demonstrates how to implement such isomorphic application using Catberry Framework
 * `empty-handlebars` - empty project using [Handlebars](http://handlebarsjs.com/) template engine.
 * `empty-dust` - empty project using [Dust](https://github.com/catberry/catberry-dust) template engine.
-* `empty-jade` - empty project using [Jade](http://jade-lang.com/) template engine.
+* `empty-pug` - empty project using [Pug](https://pugjs.org/) template engine.
 
 ### Add [Store](https://github.com/catberry/catberry/blob/master/docs/index.md#stores) into your project
  
@@ -44,7 +44,7 @@ Also you can use `preset` values such as:
 
 * `handlebars` (by default)
 * `dust`
-* `jade`
+* `pug`
 
 To get more usage details, please use `catberry --help`
 
