@@ -58,4 +58,4 @@ There are a lot of ways to contribute:
 * [Submit a PR](https://github.com/catberry/catberry-cli/blob/develop/CONTRIBUTING.md)
 * If you like the logo, you might want to buy a Catberry [T-Shirt](http://www.redbubble.com/people/catberryjs/works/14439373-catberry-js-framework-logo?p=t-shirt) or a [sticker](http://www.redbubble.com/people/catberryjs/works/14439373-catberry-js-framework-logo?p=sticker)
 
-Denis Rechkunov <denis.rechkunov@gmail.com>
+Denis Rechkunov <denis@rdner.de>
